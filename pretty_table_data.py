@@ -92,3 +92,12 @@ def create_remaining_calories_table(calories, target):
     # Reset the table to prevent duplicate data
     remaining_calories_table.clear_rows()
 
+
+def return_percentage(remaining_calories, target):
+    """ Return the percentage of calories remaining or 0 if no target set """
+    try:
+        percentage = round(remaining_calories / target * 100)
+    except ZeroDivisionError:
+        percentage = 0
+    return str(percentage) + "%"
+
