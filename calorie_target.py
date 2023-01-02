@@ -31,6 +31,14 @@ class CalorieTarget:
             elif data_string == 'n':
                 print("Target not updated")
 
+    def update_week_target(self):
+        """ Update the target by week """
+
+        week_cell = self.food_week_data.find(str(self.week))
+        row = week_cell.row
+        self.food_week_data.update_cell(row, 3, self.target)
+        print(f"Target updated to {self.target}")
+
     def validate_target(self):
         """ Validate the target is between 1 and 70000 and is an integer """
 
