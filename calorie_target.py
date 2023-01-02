@@ -43,7 +43,11 @@ class CalorieTarget:
         """ Get the weekly calorie target """
 
         week_cell = self.food_week_data.find(str(self.week))
-        row = week_cell.row
+        if not week_cell:
+            return 0
+        else:
+            row = week_cell.row
+            
         if self.food_week_data.cell(row, 3).value:
             return int(self.food_week_data.cell(row, 3).value)
         else:

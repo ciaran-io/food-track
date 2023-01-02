@@ -47,7 +47,7 @@ class UserOptions:
             case '3':
                 # Set / update weekly calorie target
                 CalorieTarget(week=current_week, food_week_data=foods_week_sheet).set_week_target()
-                
+
             case '4':
                 # View today's calories
                 today_calories = Calories(date=str(today_date),
@@ -58,6 +58,10 @@ class UserOptions:
 
                 if today_calories == 0 or None:
                     print('No calorie data for today')
+                    print('Please select option 1 add a food entry')
+                elif calorie_target == 0 or None:
+                    print('No calorie target set for this week')
+                    print('Please select option 1 add a food entry')
                 else:
                     create_remaining_calories_table(today_calories, calorie_target)
 
