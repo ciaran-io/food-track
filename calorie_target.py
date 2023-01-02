@@ -39,6 +39,22 @@ class CalorieTarget:
         self.food_week_data.update_cell(row, 3, self.target)
         print(f"Target updated to {self.target}")
 
+    def get_weekly_target(self):
+        """ Get the weekly calorie target """
+
+        week_cell = self.food_week_data.find(str(self.week))
+        row = week_cell.row
+        if self.food_week_data.cell(row, 3).value:
+            return int(self.food_week_data.cell(row, 3).value)
+        else:
+            return 0
+
+    def get_daily_target(self):
+        """ Get daily calorie target """
+        
+        print(f"You're weekly target is set to {self.get_weekly_target()}")
+        return round(self.get_weekly_target() / 7)
+
     def validate_target(self):
         """ Validate the target is between 1 and 70000 and is an integer """
 
