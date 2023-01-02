@@ -39,3 +39,16 @@ class UserOptions:
                 # Set / update weekly calorie target
                 CalorieTarget(week=current_week, food_week_data=foods_week_sheet).set_week_target()
                 
+            case '4':
+                # View today's calories
+                today_calories = Calories(date=str(today_date),
+                                          week=current_week,
+                                          data=foods_sheet).get_total_calories_by_date()
+
+                calorie_target = CalorieTarget(current_week, foods_week_sheet).get_daily_target()
+
+                if today_calories == 0 or None:
+                    print('No calorie data for today')
+                else:
+                    create_remaining_calories_table(today_calories, calorie_target)
+
