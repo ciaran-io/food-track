@@ -35,3 +35,7 @@ class UserOptions:
                                             foods_sheet=foods_sheet,
                                             target=daily_calorie_target)
 
+            case '3':
+                # Set / update weekly calorie target
+                CalorieTarget(week=current_week, food_week_data=foods_week_sheet).set_week_target()
+                
