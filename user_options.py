@@ -1,3 +1,12 @@
+from google_sheet import *
+from calorie_target import CalorieTarget
+from calories import Calories
+from food import Food
+from pretty_table_data import create_daily_food_table, \
+    create_weekly_food_table, create_remaining_calories_table, food_options_table
+from dates import today_date, week_dates, current_week
+
+
 class UserOptions:
     """User options class"""
 
@@ -6,7 +15,7 @@ class UserOptions:
 
     def user_options(self):
         """Check user input and run the relevant function"""
-        
+
         match self.user_input:
             case '1':
                 # Create new food entry in google sheets
@@ -63,3 +72,15 @@ class UserOptions:
                 ).get_total_calories_by_range(week_dates)
                 create_weekly_food_table(weekly_calories, daily_calorie_target)
 
+            case 'm':
+                # Return to main menu
+                print(food_options_table)
+
+            case 'q':
+                # Quit the program
+                print("Closing application, goodbye.")
+                exit()
+
+            case _:
+                # If no match is found
+                print("Invalid option, please choose an option from the menu \n input 'm' to return to the main menu")
