@@ -39,9 +39,12 @@ class Calories:
         """ Update google sheet weekly calories """
 
         week_cell = self.data.find(str(self.week))
-        row = week_cell.row
-        if self.data.cell(row, 2).value is None:
-            self.data.update_cell(row, 2, calories)
+        if week_cell is None:
+            self.data.append_row([self.week, calories])
         else:
-            self.data.update_cell(row, 2, int(self.data.cell(row, 2).value) + calories)
+            row = week_cell.row
+            if self.data.cell(row, 2).value is None:
+                self.data.update_cell(row, 2, calories)
+            else:
+                self.data.update_cell(row, 2, int(self.data.cell(row, 2).value) + calories)
 
