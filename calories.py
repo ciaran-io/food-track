@@ -46,5 +46,6 @@ class Calories:
             if self.data.cell(row, 2).value is None:
                 self.data.update_cell(row, 2, calories)
             else:
-                self.data.update_cell(row, 2, int(self.data.cell(row, 2).value) + calories)
-
+                self.data.update_cell(
+                    row, 2, int(self.data.cell(row, 2).value) + calories
+                )

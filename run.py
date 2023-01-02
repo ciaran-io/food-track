@@ -5,10 +5,11 @@ from user_options import UserOptions
 welcome_message()
 print(food_options_table)
 
+
 def main():
     """ Run all program functions """
     while True:
-        user_input = input("\nPlease choose an option: ")
+        user_input = input("\nPlease choose an option: \n")
         UserOptions(user_input).user_options()
 
 

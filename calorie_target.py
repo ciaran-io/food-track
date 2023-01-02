@@ -20,11 +20,14 @@ class CalorieTarget:
             print(f"Target set to {self.target}")
 
         else:
-            data_string = input("Target already set. Update? (y/n): ")
+            data_string = input("Target already set. "
+                                "Update? (y/n): ")
 
             # validate input is y or n keep in loop until valid input
             while data_string.lower() not in ('y', 'n'):
-                data_string = input("Please enter y to update or n to cancel: ")
+                data_string = input(
+                    "Please enter y to update or n to cancel: "
+                )
 
             if data_string == 'y':
                 CalorieTarget.update_week_target(self)
@@ -47,7 +50,6 @@ class CalorieTarget:
             return 0
         else:
             row = week_cell.row
-            
         if self.food_week_data.cell(row, 3).value:
             return int(self.food_week_data.cell(row, 3).value)
         else:
@@ -55,7 +57,6 @@ class CalorieTarget:
 
     def get_daily_target(self):
         """ Get daily calorie target """
-        
         print(f"You're weekly target is set to {self.get_weekly_target()}")
         return round(self.get_weekly_target() / 7)
 
