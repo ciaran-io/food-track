@@ -27,6 +27,11 @@ weekly_food_table = PrettyTable()
 weekly_food_table.field_names = ["Day", "Calories", "Target", "Remaining", "Percentage"]
 days = ["Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
 
+#  Crate a table of calories for remaining daily calories
+remaining_calories_table = PrettyTable()
+remaining_calories_table.field_names = ["Calories", "Target", "Remaining", "Percentage"]
+
+
 def create_daily_food_table(food_data, foods_sheet, target):
     """ Create a table of food from a list of food objects """
     print('Creating daily food table...')
@@ -71,4 +76,19 @@ def create_weekly_food_table(weekly_calories, target):
     weekly_food_table.clear_rows()
 
 
+def create_remaining_calories_table(calories, target):
+    """ Create a table of remaining calories for a given date range """
+    print("Creating today's food table...")
+
+    remaining_calories = return_remaining_calories(calories, target)
+    percentage = return_percentage(remaining_calories, target)
+
+    # Add the data to the table
+    remaining_calories_table.add_row(
+        [calories, target, remaining_calories, percentage]
+    )
+
+    print(remaining_calories_table)
+    # Reset the table to prevent duplicate data
+    remaining_calories_table.clear_rows()
 
