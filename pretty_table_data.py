@@ -101,3 +101,12 @@ def return_percentage(remaining_calories, target):
         percentage = 0
     return str(percentage) + "%"
 
+
+def return_remaining_calories(calories, target):
+    """ Return calories remaining or 0 if no target set """
+    if target == 0 or None:
+        calories = 0
+    else:
+        calories = target - calories
+
+    return calories
