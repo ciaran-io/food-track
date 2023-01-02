@@ -35,3 +35,13 @@ class Calories:
             total_calories.append(calories.get_total_calories_by_date())
         return total_calories
 
+    def update_weekly_calories(self, calories):
+        """ Update google sheet weekly calories """
+
+        week_cell = self.data.find(str(self.week))
+        row = week_cell.row
+        if self.data.cell(row, 2).value is None:
+            self.data.update_cell(row, 2, calories)
+        else:
+            self.data.update_cell(row, 2, int(self.data.cell(row, 2).value) + calories)
+
