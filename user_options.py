@@ -52,3 +52,14 @@ class UserOptions:
                 else:
                     create_remaining_calories_table(today_calories, calorie_target)
 
+            case '5':
+                # View weekly calories
+                daily_calorie_target = CalorieTarget(current_week, foods_week_sheet).get_daily_target()
+
+                weekly_calories = Calories(
+                    str(today_date),
+                    current_week,
+                    foods_sheet
+                ).get_total_calories_by_range(week_dates)
+                create_weekly_food_table(weekly_calories, daily_calorie_target)
+
