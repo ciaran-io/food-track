@@ -30,3 +30,17 @@ class CalorieTarget:
                 CalorieTarget.update_week_target(self)
             elif data_string == 'n':
                 print("Target not updated")
+
+    def validate_target(self):
+        """ Validate the target is between 1 and 70000 and is an integer """
+
+        try:
+            self.target = int(input("Enter the weekly target: "))
+            if self.target < 1 or self.target > 70000:
+                raise ValueError("Please enter a number between 1 and 70000")
+
+        except ValueError as e:
+            print(f"Invalid input: {e}")
+            return False
+
+        return True
