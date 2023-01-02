@@ -19,3 +19,19 @@ class UserOptions:
                 Calories(date=str(today_date), week=current_week, data=foods_week_sheet) \
                     .update_weekly_calories(calories=int(new_food[2]))
 
+            case '2':
+                # View daily food overview
+                # All cells in foods sheet with today's date
+                today_food_data = foods_sheet.findall(str(today_date))
+
+                # Fix food option to offer create food option if no food is found
+                if len(today_food_data) == 0:
+                    print('No food data for today')
+                else:
+                    daily_calorie_target = CalorieTarget(current_week,
+                                                         foods_week_sheet).get_daily_target()
+
+                    create_daily_food_table(food_data=today_food_data,
+                                            foods_sheet=foods_sheet,
+                                            target=daily_calorie_target)
+
