@@ -24,3 +24,14 @@ class Calories:
             total_weight += int(self.data.cell(row, 3).value)
 
         return total_weight
+
+    def get_total_calories_by_range(self, week_dates) -> list:
+        """ Get the total calorie amount by date range """
+
+        total_calories = []
+        for day in week_dates:
+            day = str(day)
+            calories = Calories(day, self.week, self.data)
+            total_calories.append(calories.get_total_calories_by_date())
+        return total_calories
+
