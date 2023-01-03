@@ -198,3 +198,8 @@ CalorieTargetClass: This class is used to set/update the weekly calorie goal.
     -  Set the buildpack to Python and Node.js in that order
     -  Click on Deploy
 
+---
+## Credits
+
+- Code Institute for deploying the application on Heroku using the mock terminal
+- [PrettyTable](https://pypi.org/project/prettytable/) - PrettyTable is a Python library designed to make it quick and easy to represent tabular data in visually appealing ASCII tables.
