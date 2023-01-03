@@ -104,3 +104,13 @@ Terminal output
 - Add a delete food entry option by date or date ranges
 - Update a food entry by date or date ranges
 
+---
+## Data Model
+
+### The data model for this application is as follows:
+
+UserInputClass: This class is used to validate user input & call other methods.
+CaloriesClass: This class is used to calculate the calories for the day & update weekly calories.
+CalorieTargetClass: This class is used to set/update the weekly calorie goal.
+
+---
