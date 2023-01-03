@@ -119,3 +119,28 @@ CalorieTargetClass: This class is used to set/update the weekly calorie goal.
 - [Python](https://www.python.org/) - Python is an interpreted, high-level, general-purpose programming language.
 ---
 
+## Testing
+
+### I have tested the application using the following methods:
+
+-  Passing the python code through the [PEP8 CI python linter](https://pep8ci.herokuapp.com)
+
+![PEP8 CI python linter](/docs/ci-lint.png)
+
+-  Testing Code Institute Heroku Terminal on the following browsers:
+
+  -  Chrome
+  -  Firefox
+  -  Safari
+  -  Edge
+
+- Testing on local terminal
+
+### Bugs
+
+- Cannot enter input using safari browser
+
+#### Remaining Bugs
+
+- No bugs remaining
+
