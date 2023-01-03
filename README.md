@@ -203,3 +203,4 @@ CalorieTargetClass: This class is used to set/update the weekly calorie goal.
 
 - Code Institute for deploying the application on Heroku using the mock terminal
 - [PrettyTable](https://pypi.org/project/prettytable/) - PrettyTable is a Python library designed to make it quick and easy to represent tabular data in visually appealing ASCII tables.
+- [gspread](https://docs.gspread.org/en/latest/user-guide.html) - gspread is a Python library for interacting with Google Sheets.
