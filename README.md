@@ -114,3 +114,8 @@ CaloriesClass: This class is used to calculate the calories for the day & update
 CalorieTargetClass: This class is used to set/update the weekly calorie goal.
 
 ---
+## Technologies Used
+
+- [Python](https://www.python.org/) - Python is an interpreted, high-level, general-purpose programming language.
+---
+
