@@ -37,3 +37,70 @@ This will display all the food entries for today if there are any any.
 - This will display the current weeks foods calories & remaining calories for the week
 
 ---
+
+## Features
+
+### Existing Features
+
+#### Main Menu using python package: PrettyTable
+
+  - This allows the user to select from the following options:
+    - Add a new food entry
+    - View today's food entries
+    - Set a weekly calorie goal
+    - View the current days foods calories & remaining calories for the day
+    - View the current weeks foods calories & remaining calories for the week
+
+#### Add a new food entry
+
+  - This allows the user to add a new food entry to the database
+  - Validation is in place to ensure that the user enters a food name, calories & weight
+  - The user can enter a weight or leave it blank
+  - The user can enter a food name with spaces
+  - calories & weight are must be numbers
+
+Terminal output
+
+![Add a new food entry](/docs/add-food.png)]
+
+Google sheet update to reflect the new food entry.
+
+![Add food entry google sheet](/docs/g-sheet-foods.png)
+
+#### View today's food entries
+
+Terminal output
+![View today's food entries](/docs/view-todays-food.png)
+
+#### Set a weekly calorie goal
+
+  - This allows the user to set/update a weekly calorie goal
+  - Validation is in place to ensure that the user enters a weekly calorie goal that is a number
+
+Terminal output
+![Set a weekly calorie goal](/docs/update-weekly-calories.png)
+
+Google sheet calorie update to reflect the new weekly calorie goal.
+![Set a weekly calorie goal google sheet](/docs/g-sheet-calorie-update.png)
+
+#### View the current days foods calories & remaining calories for the day
+
+  - This allows the user to view the current days foods calories, daily target & remaining calories for the day.
+
+Terminal output
+
+![View the current days foods calories & remaining calories for the day](/docs/view-todays-calories.png)
+
+#### View the current weeks foods calories & remaining calories for the week
+
+  - This allows the user to view the current weeks foods calories, weekly target & remaining calories for the week.
+
+Terminal output
+
+![View the current weeks foods calories & remaining calories for the week](/docs/view-weekly-calories.png)
+
+### Future Features
+
+- Add a delete food entry option by date or date ranges
+- Update a food entry by date or date ranges
+
