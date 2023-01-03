@@ -144,3 +144,57 @@ CalorieTargetClass: This class is used to set/update the weekly calorie goal.
 
 - No bugs remaining
 
+---
+## Deployment
+
+### This application is deployed on Heroku using Code Institute's mock Terminal.
+
+1. setup google api
+
+  -  Create a new google project
+  -  Enable the google sheets api
+  -  Enable the google drive api
+      -  Select application data option
+      -  Select no to the question: "Are you planning to use this API with App Engine or Compute Engine?"
+  -  Create a new service account
+    - Fill in the service account name
+    - Select the role: Editor
+    - click create & continue
+    - Service account details can be left blank
+  - Navigate to the service account credentials and click on the email address
+    - Next click on the KEYS tab
+    - Click on ADD KEY
+    - Select JSON
+    - Add the json file to the root directory of the application and rename it to creds.json
+  
+2. Setup google sheets
+
+  -  Create a new google sheet
+  - Add the following sheets: foods, food-weekly
+  -  Add the following headers to the foods sheet:
+      -  date 
+      - food 
+      - calories 
+      - weight
+
+  -  Add the following headers to the sheet: date, calories to the food-weekly sheet:
+     -  week
+     -  calories
+     -  target
+    
+  -  Share the google sheet with the service account email address
+  -  Copy the google sheet id from the url
+  -  Copy the google sheet service account credentials from the json file
+  -  Add the google sheet id & service account credentials to the Heroku config vars
+
+
+3. Add application on Heroku using the following steps:
+
+    -  Fork the repository
+    -  Create a new Heroku app
+    -  Connect the Heroku app to the GitHub repository
+    -  Enable automatic deployment
+    -  Deploy the master branch
+    -  Set the buildpack to Python and Node.js in that order
+    -  Click on Deploy
+
